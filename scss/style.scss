@@ -184,6 +184,7 @@ $mobile : 539px;
          background:#fafafa; 
          transition:0.5s; 
          z-index:10; 
+         box-shadow: 0px 3px 3px rgba(0,0,0,0.3) ;
 
          h1{
             padding: 25px 20px 26px 20px;
@@ -353,7 +354,7 @@ $mobile : 539px;
 
 #visual{
    width:100%; 
-   height:calc(100vh - 300px); 
+   height:calc(100vh - 270px); 
    position:relative; 
    overflow:hidden; 
    .swiper {
