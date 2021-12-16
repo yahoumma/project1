@@ -810,7 +810,7 @@ fieldset {
 /* visual -------------------------------------------- */
 #visual {
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 300px);
   position: relative;
   overflow: hidden; }
   #visual .swiper {
@@ -946,7 +946,8 @@ fieldset {
       border: 1px solid #393834; }
     #visual .swiper .swiper-button-next:hover,
     #visual .swiper .swiper-button-prev:hover {
-      background: #c6aa92; }
+      background: #c6aa92;
+      border: 1px solid rgba(0, 0, 0, 0.3); }
 
 /* our ------------------------------------------- */
 #our {

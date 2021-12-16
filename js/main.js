@@ -16,12 +16,12 @@ const swiper = new Swiper('.swiper', {
   },
  
 
-  /*
+
   autoplay: {
     delay: 2000,
     disableOnInteraction : true,
   },
-  */
+
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',

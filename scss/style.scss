@@ -353,7 +353,7 @@ $mobile : 539px;
 
 #visual{
    width:100%; 
-   height:calc(100vh - 100px); 
+   height:calc(100vh - 300px); 
    position:relative; 
    overflow:hidden; 
    .swiper {
@@ -508,6 +508,8 @@ $mobile : 539px;
       .swiper-button-next:hover,
       .swiper-button-prev:hover{
          background: #c6aa92;
+         border: 1px solid rgba(0,0,0,0.3);
+
       }
    }
 
