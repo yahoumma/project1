@@ -783,10 +783,8 @@ fieldset {
       #header .inner .menuMo.on {
         left: 0px; }
       #header .inner .menuMo .follow {
-        position: absolute;
         width: 270px;
-        bottom: 20px;
-        left: 0; }
+        margin-top: 40px; }
         #header .inner .menuMo .follow h3 {
           font: bold 14px/1 "Raleway";
           color: #888;
