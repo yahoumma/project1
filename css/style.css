@@ -966,6 +966,16 @@ fieldset {
           font: bold 70px/1 'Raleway';
           color: #c6aa92;
           transition: 1s; }
+        #our .inner .wrap article:hover .btnMore::after {
+          content: '';
+          display: block;
+          background-color: #c6aa92;
+          width: 310px;
+          height: 1px;
+          position: absolute;
+          top: 50%;
+          left: 120%;
+          transition: 1s; }
         #our .inner .wrap article:last-child {
           margin-right: 0px; }
         #our .inner .wrap article h2 {
@@ -991,16 +1001,6 @@ fieldset {
           font: bold 14px/1 'Raleway';
           color: #c6aa92;
           position: relative; }
-          #our .inner .wrap article .btnMore:hover::after {
-            content: '';
-            display: block;
-            background-color: #c6aa92;
-            width: 310px;
-            height: 1px;
-            position: absolute;
-            top: 50%;
-            left: 120%;
-            transition: 0.5s; }
           #our .inner .wrap article .btnMore::after {
             content: '';
             display: block;
@@ -1010,7 +1010,7 @@ fieldset {
             position: absolute;
             top: 50%;
             left: 120%;
-            transition: 0.5s; }
+            transition: 1s; }
 
 /* banner -------------------------------------------*/
 #banner {
@@ -1034,54 +1034,53 @@ fieldset {
       text-align: center; }
     #banner .inner .bannerBtn {
       display: block;
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
       background: #c6aa92;
       color: #fafafa;
-      line-height: 50px;
+      line-height: 100px;
+      font-size: 20px;
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      transform-origin: center center;
-      bottom: -25px;
+      bottom: 0;
+      transform-origin: center;
+      bottom: 0;
       transition: 0.5s;
       z-index: 1;
-      animation: baannerBtn 2s ease-in Infinite Alternate; }
+      left: calc(50% - 50px);
+      bottom: -50px;
+      animation: bannerBtn 2s ease-in Infinite Alternate; }
       #banner .inner .bannerBtn::after {
         content: '';
         display: block;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
         background: #c6aa92;
         position: absolute;
         top: 0;
         z-index: -1;
         transition: 0.5s; }
       #banner .inner .bannerBtn:hover {
-        transition: 0.5s;
-        transform: scale(2);
-        box-shadow: 10px #c6aa92;
-        opacity: 0.7;
-        animation-play-state: paused; }
+        animation-play-state: paused;
+        cursor: pointer; }
 
-@keyframes baannerBtn {
+@keyframes bannerBtn {
   0% {
-    transform: scale(100%); }
+    transform: scale(50%); }
   100% {
-    transform: scale(200%); } }
+    transform: scale(100%); } }
 /* project ------------------------------------------*/
 #project {
   width: 100%;
-  background: #fafafa;
+  background: #fff;
   padding: 200px 0 300px 0; }
   #project .inner {
     width: 1180px;
     margin: 0 auto;
     text-align: center; }
     #project .inner h1 {
-      font: bold 40px/1 'arial';
+      font: bold 40px/1 'Railway';
       margin-bottom: 30px; }
       #project .inner h1 span {
         display: block;
@@ -1089,11 +1088,13 @@ fieldset {
         font: 20px/1 'Railway';
         color: #ccc; }
     #project .inner .wrap {
-      width: 100%; }
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
       #project .inner .wrap article {
         width: 236px;
         height: 236px;
-        float: left;
         position: relative; }
         #project .inner .wrap article a {
           display: block;
@@ -1142,7 +1143,8 @@ fieldset {
 /* works ----------------------------------- */
 #works {
   width: 100%;
-  padding: 150px 0; }
+  padding: 150px 0;
+  background-color: #fafafa; }
   #works .inner {
     width: 1180px;
     margin: 0 auto; }
@@ -1171,16 +1173,16 @@ fieldset {
       #works .inner article h2 {
         display: flex;
         align-items: center;
-        font: bold 30px/1 'arial';
+        font: bold 30px/1 'Railway';
         margin-bottom: 20px;
         margin-left: 40px; }
       #works .inner article p {
-        font: 14px/1.6 'arial';
+        font: 14px/1.6 'Railway';
         color: #393834;
         margin-left: 40px;
         margin-bottom: 40px; }
       #works .inner article span {
-        font: 20px/1 'arial';
+        font: 20px/1 'Railway';
         color: #393834;
         margin-left: 40px;
         position: relative; }
@@ -1210,7 +1212,7 @@ fieldset {
   width: 100%;
   height: 600px;
   padding: 100px 0;
-  background: #fdfdfd; }
+  background: #fff; }
   #news .inner {
     width: 1180px;
     margin: 0 auto;
@@ -1263,7 +1265,8 @@ fieldset {
           width: 20px;
           height: 2px;
           background: #c6aa92;
-          margin: 10px 0 30px 0; }
+          margin: 10px 0 30px 0;
+          transition: 0.5s; }
       #news .inner article p {
         width: 100%;
         height: 100px;
@@ -1282,6 +1285,10 @@ fieldset {
         font-size: 16px; }
         #news .inner article .btn:hover {
           background-color: #ff0000; }
+      #news .inner article::after {
+        clear: both;
+        content: '';
+        display: block; }
 
 /* footer ------------------------------------*/
 #footer {
@@ -1299,41 +1306,48 @@ fieldset {
       justify-content: space-between;
       padding-bottom: 50px; }
       #footer .inner .footMenu article {
-        width: 380px;
+        width: 30%;
         height: 100px;
         border-left: 1px solid #777777;
         padding-left: 50px; }
+        #footer .inner .footMenu article:nth-of-type(1) {
+          border-left: none; }
         #footer .inner .footMenu article h2 {
-          font: 20px/1 'arial';
+          font: 20px/1 'Raleway';
           color: #c6aa92;
           margin-bottom: 20px; }
         #footer .inner .footMenu article ol li,
         #footer .inner .footMenu article p {
-          font: 14px/1.5 'arial';
-          color: #fafafa; }
+          font: 14px/1.5 'Raleway';
+          color: #fafafa;
+          word-break: break-all; }
   #footer .subscribe {
     text-align: center;
     margin-bottom: 50px;
     position: relative; }
     #footer .subscribe h2 {
-      font: 20px/1 'arial';
+      font: 20px/1 'Raleway';
       color: #fafafa;
       margin-bottom: 20px; }
-    #footer .subscribe input[type=email] {
+    #footer .subscribe form {
+      position: relative;
       width: 450px;
-      height: 50px;
-      border: 1px solid #fafafa;
-      border-radius: 25px;
-      padding: 20px; }
-    #footer .subscribe button[type=submit] {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      right: 360px;
-      border: 0;
-      background: #fafafa;
-      cursor: pointer; }
+      margin: 0 auto; }
+      #footer .subscribe form input[type=email] {
+        width: 450px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 20px;
+        border: none; }
+      #footer .subscribe form button[type=submit] {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        right: 0;
+        border: 0;
+        background: #fafafa;
+        cursor: pointer; }
   #footer .copy {
     position: absolute;
     bottom: 0;
@@ -1357,7 +1371,7 @@ fieldset {
         #footer .copy .inner ul li {
           margin-right: 20px; }
           #footer .copy .inner ul li a {
-            font: bold 14px/1 'Raleway';
+            font: 14px/1 'Raleway';
             color: #fafafa; }
 
 /* tablet --------------------------------------------------------------------*/
@@ -1383,110 +1397,230 @@ fieldset {
       display: block; }
 
   /* visual -------------------------------------------- */
-  #visual {
-    height: calc(100vh - 101px);
-    background: url(../img/visual1.jpg) no-repeat center/cover; }
-    #visual video {
-      display: none; }
-    #visual .inner {
-      width: 100%;
-      padding: 0 30px; }
-      #visual .inner h1 {
-        font: normal 14vmin/1 'Raleway'; }
-      #visual .inner a {
-        width: 100%; }
-
-  /* news ------------------------------------------- */
-  #news {
-    padding: 100px 30px; }
-    #news .inner {
+  #visual .swiper .swiper-wrapper .swiper-slide .inner {
+    width: 100%; }
+    #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox {
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
       width: 100%; }
-      #news .inner .wrap article {
-        width: 49%;
-        margin-right: 2%;
-        margin-bottom: 60px; }
-        #news .inner .wrap article:nth-child(2n) {
-          margin-right: 0; }
-        #news .inner .wrap article .pic {
-          height: 20vmax; }
+      #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox p {
+        margin-bottom: 80px; }
+      #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox a {
+        margin: 0 auto;
+        width: 400px;
+        height: 40px;
+        font: 16px/40px 'Raleway'; }
+  #visual .swiper .swiper-pagination {
+    display: none; }
+  #visual .swiper .swiper-button-prev {
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    color: #fafafa;
+    font: 25px/60px 'arial'; }
+  #visual .swiper .swiper-button-next {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    color: #fafafa;
+    font: 25px/60px 'arial'; }
 
-  /* brand ------------------------------------------*/
-  #brand {
-    padding: 100px 30px; }
-    #brand .inner {
-      width: 100%; }
-      #brand .inner .wrap article:nth-of-type(1) {
-        width: 49%;
-        margin-right: 2%; }
-      #brand .inner .wrap article:nth-of-type(2) {
-        width: 49%;
+  /* our ------------------------------------------- */
+  #our .inner {
+    width: 100%;
+    margin: 0 auto; }
+    #our .inner .wrap {
+      width: 80%;
+      margin: 0 auto; }
+      #our .inner .wrap article {
+        width: 50%;
+        float: left;
         margin-right: 0px;
-        margin-bottom: 20px; }
-      #brand .inner .wrap article:nth-of-type(3) {
-        width: 49%; }
-      #brand .inner .wrap article:nth-of-type(4) {
-        width: 100%; }
+        transition: 1s; }
+        #our .inner .wrap article:hover .btnMore::after {
+          width: 85%;
+          left: 15%; }
+        #our .inner .wrap article:nth-of-type(even) {
+          margin-top: 250px;
+          margin-bottom: 100px; }
+        #our .inner .wrap article:last-child {
+          margin-right: 0px; }
+        #our .inner .wrap article h2 {
+          margin-bottom: 20px; }
+        #our .inner .wrap article .btnMore {
+          display: block;
+          width: 100%; }
+          #our .inner .wrap article .btnMore::after {
+            width: 10%;
+            left: 15%; }
 
   /* banner -------------------------------------------*/
   #banner {
-    padding: 150px 30px; }
+    padding: 200px 40px; }
     #banner .inner {
       width: 100%; }
 
-  /* comment --------------------------------------*/
-  #comments {
-    padding: 80px 30px; }
-    #comments .inner {
+  /* project ------------------------------------------*/
+  #project {
+    padding: 200px 0; }
+    #project .inner {
+      width: 100%; }
+      #project .inner h1 {
+        margin-bottom: 60px; }
+      #project .inner .wrap {
+        flex-direction: column; }
+        #project .inner .wrap article {
+          width: 80%;
+          margin-bottom: 100px; }
+          #project .inner .wrap article a {
+            width: 100%; }
+            #project .inner .wrap article a:hover::after {
+              font-size: 60px; }
+            #project .inner .wrap article a::after {
+              width: 100%; }
+
+  /* works ----------------------------------- */
+  #works {
+    width: 100%;
+    padding: 150px 0;
+    background-color: #fafafa; }
+    #works .inner {
+      width: 80%;
+      margin: 0 auto; }
+      #works .inner article {
+        width: 50%;
+        margin: 0 0 40px; }
+        #works .inner article span {
+          position: absolute;
+          right: 10%;
+          bottom: 50px; }
+          #works .inner article span i {
+            transition: 0.5s;
+            cursor: pointer;
+            color: #393834; }
+          #works .inner article span::after {
+            display: none; }
+        #works .inner article:hover span i {
+          transform: scale(1.4); }
+        #works .inner article:last-child {
+          margin-right: 0; }
+        #works .inner article:nth-child(n+4):nth-child(-n+6) {
+          border-bottom: 1px solid #ccc;
+          margin-bottom: 40px; }
+
+  /* news ------------------------------------------- */
+  #news {
+    height: auto;
+    padding: 100px 0; }
+    #news .inner {
+      width: 80%; }
+      #news .inner article {
+        width: 100%;
+        height: 280px;
+        float: none;
+        margin-right: 0px;
+        transition: 0.5s;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 40px; }
+        #news .inner article:hover .date::after {
+          width: 15%; }
+        #news .inner article .btn {
+          position: absolute;
+          right: 0; }
+
+  /* footer ------------------------------------*/
+  #footer {
+    padding: 80px 0; }
+    #footer .inner {
+      width: 90%; }
+    #footer .copy .inner {
+      width: 90%; } }
+/* mobile --------------------------------------------------------------------*/
+@media screen and (max-width: 539px) {
+  /* visual -------------------------------------------- */
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox h1 {
+    font: bold 40px/1 'Courgette';
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 40px; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox h2 {
+    font: 20px/1 'Raleway';
+    color: #fff; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox p {
+    font: 14px/1.4 'Raleway';
+    width: 80%;
+    margin: 0 auto; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox a {
+    width: 100px;
+    height: 30px;
+    font: 12px/30px 'Raleway';
+    margin-top: 60px; }
+
+  /* our ------------------------------------------- */
+  #our .inner .wrap article {
+    width: 100%; }
+    #our .inner .wrap article:nth-of-type(even) {
+      margin-top: 80px;
+      margin-bottom: 80px; }
+
+  /* works ----------------------------------- */
+  #works {
+    padding: 80px 0; }
+    #works .inner article {
       width: 100%; }
 
   /* footer ------------------------------------*/
   #footer {
-    padding: 80px 30px; }
+    padding: 40px 0; }
     #footer .inner {
-      width: 100%; } }
-/* mobile --------------------------------------------------------------------*/
-@media screen and (max-width: 539px) {
-  /* visual -------------------------------------------- */
-  #visual .inner h1 {
-    font: normal 12vmin/1 'Raleway'; }
-
-  /* news ------------------------------------------- */
-  #news .inner .wrap article {
-    width: 100%;
-    margin-right: 0%; }
-    #news .inner .wrap article .pic {
-      height: 30vmax; }
-
-  /* brand ------------------------------------------*/
-  #brand .inner .wrap article:nth-of-type(1) {
-    width: 100%;
-    height: 400px;
-    padding: 50px;
-    margin-right: 0%;
-    margin-bottom: 20px; }
-  #brand .inner .wrap article:nth-of-type(2) {
-    width: 100%; }
-  #brand .inner .wrap article:nth-of-type(3) {
-    width: 100%; }
-  #brand .inner .wrap article:nth-of-type(4) {
-    width: 100%; }
-
-  /* banner -------------------------------------------*/
-  #banner {
-    padding: 120px 30px; }
-
-  /* comment --------------------------------------*/
-  #comments .inner ul li a {
-    margin-bottom: 10px; }
-
-  /* footer ------------------------------------*/
-  #footer .inner h1 {
-    margin-bottom: 20px; }
-  #footer .inner ul {
-    width: 100%; }
-    #footer .inner ul li {
-      margin-left: 0;
-      margin: 5px; } }
+      width: 100%; }
+      #footer .inner .footMenu {
+        width: 80%;
+        flex-direction: column;
+        padding-bottom: 50px;
+        margin: 0 auto;
+        text-align: center; }
+        #footer .inner .footMenu article {
+          width: 100%;
+          height: auto;
+          border-left: none;
+          padding: 30px 0; }
+          #footer .inner .footMenu article:nth-of-type(2) {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc; }
+    #footer .subscribe form {
+      width: 80%; }
+      #footer .subscribe form input[type=email] {
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        padding: 20px; }
+      #footer .subscribe form button[type=submit] {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        right: 1px;
+        background: #fafafa;
+        cursor: pointer; }
+    #footer .copy {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      border-top: 1px solid #888; }
+      #footer .copy .inner {
+        width: 90%; }
+        #footer .copy .inner p {
+          text-align: center; }
+        #footer .copy .inner ul {
+          display: none; } }
 /*# sourceMappingURL=style.scss.map */
 
 /*# sourceMappingURL=style.css.map */
