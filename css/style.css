@@ -1034,43 +1034,43 @@ fieldset {
       text-align: center; }
     #banner .inner .bannerBtn {
       display: block;
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
       background: #c6aa92;
       color: #fafafa;
-      line-height: 50px;
+      line-height: 100px;
+      font-size: 20px;
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      transform-origin: center center;
-      bottom: -25px;
+      bottom: 0;
+      transform-origin: center;
+      bottom: 0;
       transition: 0.5s;
       z-index: 1;
+      left: calc(50% - 50px);
+      bottom: -50px;
       animation: bannerBtn 2s ease-in Infinite Alternate; }
       #banner .inner .bannerBtn::after {
         content: '';
         display: block;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
         background: #c6aa92;
         position: absolute;
         top: 0;
         z-index: -1;
         transition: 0.5s; }
       #banner .inner .bannerBtn:hover {
-        transition: 0.5s;
-        transform: scale(2);
-        box-shadow: 10px #c6aa92;
-        opacity: 0.7;
-        animation-play-state: paused; }
+        animation-play-state: paused;
+        cursor: pointer;
+        opacity: 0.7; }
 
 @keyframes bannerBtn {
   0% {
-    transform: scale(100%); }
+    transform: scale(50%); }
   100% {
-    transform: scale(200%); } }
+    transform: scale(100%); } }
 /* project ------------------------------------------*/
 #project {
   width: 100%;
@@ -1307,20 +1307,21 @@ fieldset {
       justify-content: space-between;
       padding-bottom: 50px; }
       #footer .inner .footMenu article {
-        width: 380px;
+        width: 30%;
         height: 100px;
         border-left: 1px solid #777777;
         padding-left: 50px; }
         #footer .inner .footMenu article:nth-of-type(1) {
           border-left: none; }
         #footer .inner .footMenu article h2 {
-          font: 20px/1 'arial';
+          font: 20px/1 'Raleway';
           color: #c6aa92;
           margin-bottom: 20px; }
         #footer .inner .footMenu article ol li,
         #footer .inner .footMenu article p {
-          font: 14px/1.5 'arial';
-          color: #fafafa; }
+          font: 14px/1.5 'Raleway';
+          color: #fafafa;
+          word-break: break-all; }
   #footer .subscribe {
     text-align: center;
     margin-bottom: 50px;
@@ -1336,9 +1337,9 @@ fieldset {
       #footer .subscribe form input[type=email] {
         width: 450px;
         height: 50px;
-        border: 1px solid #fafafa;
         border-radius: 25px;
-        padding: 20px; }
+        padding: 20px;
+        border: none; }
       #footer .subscribe form button[type=submit] {
         position: absolute;
         width: 50px;
@@ -1544,46 +1545,83 @@ fieldset {
 /* mobile --------------------------------------------------------------------*/
 @media screen and (max-width: 539px) {
   /* visual -------------------------------------------- */
-  #visual .inner h1 {
-    font: normal 12vmin/1 'Raleway'; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox h1 {
+    font: bold 40px/1 'Courgette';
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 40px; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox h2 {
+    font: 20px/1 'Raleway';
+    color: #fff; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox p {
+    font: 14px/1.4 'Raleway';
+    width: 80%;
+    margin: 0 auto; }
+  #visual .swiper .swiper-wrapper .swiper-slide .inner .txtBox a {
+    width: 100px;
+    height: 30px;
+    font: 12px/30px 'Raleway';
+    margin-top: 60px; }
 
-  /* news ------------------------------------------- */
-  #news .inner .wrap article {
-    width: 100%;
-    margin-right: 0%; }
-    #news .inner .wrap article .pic {
-      height: 30vmax; }
-
-  /* brand ------------------------------------------*/
-  #brand .inner .wrap article:nth-of-type(1) {
-    width: 100%;
-    height: 400px;
-    padding: 50px;
-    margin-right: 0%;
-    margin-bottom: 20px; }
-  #brand .inner .wrap article:nth-of-type(2) {
+  /* our ------------------------------------------- */
+  #our .inner .wrap article {
     width: 100%; }
-  #brand .inner .wrap article:nth-of-type(3) {
-    width: 100%; }
-  #brand .inner .wrap article:nth-of-type(4) {
-    width: 100%; }
+    #our .inner .wrap article:nth-of-type(even) {
+      margin-top: 80px;
+      margin-bottom: 80px; }
 
-  /* banner -------------------------------------------*/
-  #banner {
-    padding: 120px 30px; }
-
-  /* comment --------------------------------------*/
-  #comments .inner ul li a {
-    margin-bottom: 10px; }
+  /* works ----------------------------------- */
+  #works {
+    padding: 80px 0; }
+    #works .inner article {
+      width: 100%; }
 
   /* footer ------------------------------------*/
-  #footer .inner h1 {
-    margin-bottom: 20px; }
-  #footer .inner ul {
-    width: 100%; }
-    #footer .inner ul li {
-      margin-left: 0;
-      margin: 5px; } }
+  #footer {
+    padding: 40px 0; }
+    #footer .inner {
+      width: 100%; }
+      #footer .inner .footMenu {
+        width: 80%;
+        flex-direction: column;
+        padding-bottom: 50px;
+        margin: 0 auto;
+        text-align: center; }
+        #footer .inner .footMenu article {
+          width: 100%;
+          height: auto;
+          border-left: none;
+          padding: 30px 0; }
+          #footer .inner .footMenu article:nth-of-type(2) {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc; }
+    #footer .subscribe form {
+      width: 80%; }
+      #footer .subscribe form input[type=email] {
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        padding: 20px; }
+      #footer .subscribe form button[type=submit] {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        right: 1px;
+        background: #fafafa;
+        cursor: pointer; }
+    #footer .copy {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      border-top: 1px solid #888; }
+      #footer .copy .inner {
+        width: 90%; }
+        #footer .copy .inner p {
+          text-align: center; }
+        #footer .copy .inner ul {
+          display: none; } }
 /*# sourceMappingURL=style.scss.map */
 
 /*# sourceMappingURL=style.css.map */
