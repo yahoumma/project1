@@ -527,11 +527,25 @@ $mobile : 539px;
             width:360px; 
             float:left; 
             margin-right: 40px;
+
             &:hover{
                span{
                   font: bold 70px/1 'Raleway';
                   color: #c6aa92;
                   transition: 1s;
+               }
+               .btnMore{
+                  &::after{
+                     content: '';
+                     display: block;
+                     background-color: #c6aa92;
+                     width: 310px;
+                     height: 1px;
+                     position: absolute;
+                     top:50%;
+                     left: 120%;
+                     transition: 1s;
+                  }
                }
                
             }
@@ -565,19 +579,7 @@ $mobile : 539px;
                font:bold 14px/1 'Raleway'; 
                color:#c6aa92; 
                position: relative;
-               &:hover{
-                  &::after{
-                     content: '';
-                     display: block;
-                     background-color: #c6aa92;
-                     width: 310px;
-                     height: 1px;
-                     position: absolute;
-                     top:50%;
-                     left: 120%;
-                     transition: 0.5s;
-                  }
-               }
+               
                &::after{
                   content: '';
                   display: block;
@@ -587,7 +589,7 @@ $mobile : 539px;
                   position: absolute;
                   top:50%;
                   left: 120%;
-                  transition: 0.5s;
+                  transition: 1s;
                }
             }
          }
@@ -1080,75 +1082,192 @@ $mobile : 539px;
 }
 
 /* visual -------------------------------------------- */
-#visual{   
-   height:calc(100vh - 101px); 
-   background:url(../img/visual1.jpg) no-repeat center/cover; 
-    
-   video{ display:none;  }
-   .inner{
-      width:100%; 
-      padding:0 30px; 
+#visual{
+   .swiper {
+      .swiper-wrapper{
+         .swiper-slide{
+            .inner{
+               width: 100%;
+               .txtBox{
+                  top: 15%;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  text-align: center;
+                  width: 100%;
+                  p{
+                     margin-bottom: 80px;
+                  }
+                  a{
+                     margin: 0 auto;
+                     width: 400px;
+                     height: 40px;
+                     font: 16px/40px 'Raleway';
+                  }
+               }
+            }
+         }
+      }
+      .swiper-pagination{
+         display: none;
+      }
+      .swiper-button-prev{
+         bottom: 0;
+         left: 0;
+         width: 60px;
+         height: 60px;
+         color: #fafafa;
+         font: 25px/60px 'arial';
+      }
+      .swiper-button-next{
+         display: block;
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         width: 60px;
+         height: 60px;
+         color: #fafafa;
+         font: 25px/60px 'arial';
+      }
 
-      h1{ font:normal 14vmin/1 'Raleway'; }
-       
-      a{ width:100%; }
    }
+
 }
 
-/* news ------------------------------------------- */
-#news{    
-   padding:100px 30px; 
+/* our ------------------------------------------- */
+#our{
    .inner{
-      width:100%;        
-      .wrap{  
+      width:100%; 
+      margin:0 auto; 
+      .wrap{
+         width:80%; 
+         margin: 0 auto;
          article{
-            width:49%;             
-            margin-right:2%; 
-            margin-bottom:60px; 
-
-            &:nth-child(2n){margin-right:0;}
-            .pic{ height:20vmax; }
+            width:50%; 
+            float:left; 
+            margin-right: 0px;
+            transition: 1s;
+            &:hover{
+               .btnMore{
+                  &::after{
+                     width: 85%;
+                     left: 15%;
+                  }
+               }
+            }
+            &:nth-of-type(even){
+               margin-top: 250px;
+               margin-bottom: 100px;
+            }
+            &:last-child{
+               margin-right:0px; 
+            }
+            h2{
+               margin-bottom:20px; 
+            }
+            .btnMore{
+               display: block;
+               width: 100%;
+               &::after{
+                  width: 10%;
+                  left: 15%;
+               }
+            }
          }
       }
    }   
 }
+/* banner -------------------------------------------*/ 
+#banner{    
+   padding:200px 40px; 
+   .inner{ width:100%; }
+}
 
-/* brand ------------------------------------------*/
-#brand{   
-   padding:100px 30px;     
+/* project ------------------------------------------*/
+#project{
+   width:100%; 
+   background:#fafafa; 
+   padding: 200px 0 300px 0;
    .inner{
-      width:100%;   
-      .wrap{         
+      width:1180px; 
+      margin:0 auto; 
+      text-align: center;
+
+      h1{
+         font: bold 40px/1 'arial';
+         margin-bottom: 30px;
+         span{
+            display: block;
+            margin-top: 10px;
+            font: 20px/1 'Railway';
+            color: #ccc;
+         }
+      }
+      .wrap{
+         width:100%; 
          article{
-            &:nth-of-type(1){
-               width:49%; 
-               margin-right:2%;    
+            width: 236px;
+            height: 236px;
+            float: left;
+            position: relative;
+            a{
+               display: block;
+               width: 236px;
+               height: 236px;
+               &:hover{
+                  &::after{
+                     opacity: 0.7;
+                  }
+               }
+               &::after{
+                  content: '+';
+                  display: block;
+                  width: 236px;
+                  height: 236px;
+                  background: #393834;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  color: #c6aa92;
+                  font: 30px/236px 'arial';
+                  opacity: 0;
+                  transition: 0.5s;
+               }
+               
+               img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
             }
-            &:nth-of-type(2){
-               width:49%;               
-               margin-right:0px;
-               margin-bottom:20px;                
+            .profile{   
+               position: absolute;
+               bottom: -30%;
+               left: 50%;
+               transform: translateX(-50%);
+               text-align: center;
+               img{
+                  width: 50px;height: 50px;
+                  border-radius: 50%;
+                  box-shadow: 5px 5px 15px #777;
+                  margin-bottom: 10px;
+               }
+               p{
+                  font: bold 16px/1 'Railway';
+                  color: #777;
+                  margin-bottom: 3px;
+               }
+               span{
+                  display: block;
+                  font: 12px/1 'Railway';
+                  color: #ccc;
+               }
             }
-            &:nth-of-type(3){width:49%; }
-            &:nth-of-type(4){width:100%;  }
+           
          }
       }
    }
 }
 
-/* banner -------------------------------------------*/ 
-#banner{    
-   padding:150px 30px; 
-     
-   .inner{ width:100%; }
-}
-
-/* comment --------------------------------------*/ 
-#comments{   
-   padding:80px 30px; 
-   
-   .inner{  width:100%; }
-}
 
 /* footer ------------------------------------*/ 
 #footer{  
