@@ -1047,7 +1047,7 @@ fieldset {
       bottom: -25px;
       transition: 0.5s;
       z-index: 1;
-      animation: baannerBtn 2s ease-in Infinite Alternate; }
+      animation: bannerBtn 2s ease-in Infinite Alternate; }
       #banner .inner .bannerBtn::after {
         content: '';
         display: block;
@@ -1066,7 +1066,7 @@ fieldset {
         opacity: 0.7;
         animation-play-state: paused; }
 
-@keyframes baannerBtn {
+@keyframes bannerBtn {
   0% {
     transform: scale(100%); }
   100% {
@@ -1074,14 +1074,14 @@ fieldset {
 /* project ------------------------------------------*/
 #project {
   width: 100%;
-  background: #fafafa;
+  background: #fff;
   padding: 200px 0 300px 0; }
   #project .inner {
     width: 1180px;
     margin: 0 auto;
     text-align: center; }
     #project .inner h1 {
-      font: bold 40px/1 'arial';
+      font: bold 40px/1 'Railway';
       margin-bottom: 30px; }
       #project .inner h1 span {
         display: block;
@@ -1089,11 +1089,13 @@ fieldset {
         font: 20px/1 'Railway';
         color: #ccc; }
     #project .inner .wrap {
-      width: 100%; }
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
       #project .inner .wrap article {
         width: 236px;
         height: 236px;
-        float: left;
         position: relative; }
         #project .inner .wrap article a {
           display: block;
@@ -1142,7 +1144,8 @@ fieldset {
 /* works ----------------------------------- */
 #works {
   width: 100%;
-  padding: 150px 0; }
+  padding: 150px 0;
+  background-color: #fafafa; }
   #works .inner {
     width: 1180px;
     margin: 0 auto; }
@@ -1171,16 +1174,16 @@ fieldset {
       #works .inner article h2 {
         display: flex;
         align-items: center;
-        font: bold 30px/1 'arial';
+        font: bold 30px/1 'Railway';
         margin-bottom: 20px;
         margin-left: 40px; }
       #works .inner article p {
-        font: 14px/1.6 'arial';
+        font: 14px/1.6 'Railway';
         color: #393834;
         margin-left: 40px;
         margin-bottom: 40px; }
       #works .inner article span {
-        font: 20px/1 'arial';
+        font: 20px/1 'Railway';
         color: #393834;
         margin-left: 40px;
         position: relative; }
@@ -1210,7 +1213,7 @@ fieldset {
   width: 100%;
   height: 600px;
   padding: 100px 0;
-  background: #fdfdfd; }
+  background: #fff; }
   #news .inner {
     width: 1180px;
     margin: 0 auto;
@@ -1263,7 +1266,8 @@ fieldset {
           width: 20px;
           height: 2px;
           background: #c6aa92;
-          margin: 10px 0 30px 0; }
+          margin: 10px 0 30px 0;
+          transition: 0.5s; }
       #news .inner article p {
         width: 100%;
         height: 100px;
@@ -1282,6 +1286,10 @@ fieldset {
         font-size: 16px; }
         #news .inner article .btn:hover {
           background-color: #ff0000; }
+      #news .inner article::after {
+        clear: both;
+        content: '';
+        display: block; }
 
 /* footer ------------------------------------*/
 #footer {
@@ -1303,6 +1311,8 @@ fieldset {
         height: 100px;
         border-left: 1px solid #777777;
         padding-left: 50px; }
+        #footer .inner .footMenu article:nth-of-type(1) {
+          border-left: none; }
         #footer .inner .footMenu article h2 {
           font: 20px/1 'arial';
           color: #c6aa92;
@@ -1316,24 +1326,28 @@ fieldset {
     margin-bottom: 50px;
     position: relative; }
     #footer .subscribe h2 {
-      font: 20px/1 'arial';
+      font: 20px/1 'Raleway';
       color: #fafafa;
       margin-bottom: 20px; }
-    #footer .subscribe input[type=email] {
+    #footer .subscribe form {
+      position: relative;
       width: 450px;
-      height: 50px;
-      border: 1px solid #fafafa;
-      border-radius: 25px;
-      padding: 20px; }
-    #footer .subscribe button[type=submit] {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      right: 360px;
-      border: 0;
-      background: #fafafa;
-      cursor: pointer; }
+      margin: 0 auto; }
+      #footer .subscribe form input[type=email] {
+        width: 450px;
+        height: 50px;
+        border: 1px solid #fafafa;
+        border-radius: 25px;
+        padding: 20px; }
+      #footer .subscribe form button[type=submit] {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        right: 0;
+        border: 0;
+        background: #fafafa;
+        cursor: pointer; }
   #footer .copy {
     position: absolute;
     bottom: 0;
@@ -1357,7 +1371,7 @@ fieldset {
         #footer .copy .inner ul li {
           margin-right: 20px; }
           #footer .copy .inner ul li a {
-            font: bold 14px/1 'Raleway';
+            font: 14px/1 'Raleway';
             color: #fafafa; }
 
 /* tablet --------------------------------------------------------------------*/
@@ -1454,77 +1468,79 @@ fieldset {
 
   /* project ------------------------------------------*/
   #project {
-    width: 100%;
-    background: #fafafa;
-    padding: 200px 0 300px 0; }
+    padding: 200px 0; }
     #project .inner {
-      width: 1180px;
-      margin: 0 auto;
-      text-align: center; }
+      width: 100%; }
       #project .inner h1 {
-        font: bold 40px/1 'arial';
-        margin-bottom: 30px; }
-        #project .inner h1 span {
-          display: block;
-          margin-top: 10px;
-          font: 20px/1 'Railway';
-          color: #ccc; }
+        margin-bottom: 60px; }
       #project .inner .wrap {
-        width: 100%; }
+        flex-direction: column; }
         #project .inner .wrap article {
-          width: 236px;
-          height: 236px;
-          float: left;
-          position: relative; }
+          width: 80%;
+          margin-bottom: 100px; }
           #project .inner .wrap article a {
-            display: block;
-            width: 236px;
-            height: 236px; }
+            width: 100%; }
             #project .inner .wrap article a:hover::after {
-              opacity: 0.7; }
+              font-size: 60px; }
             #project .inner .wrap article a::after {
-              content: '+';
-              display: block;
-              width: 236px;
-              height: 236px;
-              background: #393834;
-              position: absolute;
-              top: 0;
-              left: 0;
-              color: #c6aa92;
-              font: 30px/236px 'arial';
-              opacity: 0;
-              transition: 0.5s; }
-            #project .inner .wrap article a img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover; }
-          #project .inner .wrap article .profile {
-            position: absolute;
-            bottom: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center; }
-            #project .inner .wrap article .profile img {
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              box-shadow: 5px 5px 15px #777;
-              margin-bottom: 10px; }
-            #project .inner .wrap article .profile p {
-              font: bold 16px/1 'Railway';
-              color: #777;
-              margin-bottom: 3px; }
-            #project .inner .wrap article .profile span {
-              display: block;
-              font: 12px/1 'Railway';
-              color: #ccc; }
+              width: 100%; }
+
+  /* works ----------------------------------- */
+  #works {
+    width: 100%;
+    padding: 150px 0;
+    background-color: #fafafa; }
+    #works .inner {
+      width: 80%;
+      margin: 0 auto; }
+      #works .inner article {
+        width: 50%;
+        margin: 0 0 40px; }
+        #works .inner article span {
+          position: absolute;
+          right: 10%;
+          bottom: 50px; }
+          #works .inner article span i {
+            transition: 0.5s;
+            cursor: pointer;
+            color: #393834; }
+          #works .inner article span::after {
+            display: none; }
+        #works .inner article:hover span i {
+          transform: scale(1.4); }
+        #works .inner article:last-child {
+          margin-right: 0; }
+        #works .inner article:nth-child(n+4):nth-child(-n+6) {
+          border-bottom: 1px solid #ccc;
+          margin-bottom: 40px; }
+
+  /* news ------------------------------------------- */
+  #news {
+    height: auto;
+    padding: 100px 0; }
+    #news .inner {
+      width: 80%; }
+      #news .inner article {
+        width: 100%;
+        height: 280px;
+        float: none;
+        margin-right: 0px;
+        transition: 0.5s;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 40px; }
+        #news .inner article:hover .date::after {
+          width: 15%; }
+        #news .inner article .btn {
+          position: absolute;
+          right: 0; }
 
   /* footer ------------------------------------*/
   #footer {
-    padding: 80px 30px; }
+    padding: 80px 0; }
     #footer .inner {
-      width: 100%; } }
+      width: 90%; }
+    #footer .copy .inner {
+      width: 90%; } }
 /* mobile --------------------------------------------------------------------*/
 @media screen and (max-width: 539px) {
   /* visual -------------------------------------------- */
