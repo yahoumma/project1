@@ -30,44 +30,77 @@ fieldset {
 
 /* header_sub ----------------------------------------*/
 #header_sub {
-  width: 100%;
-  border-bottom: 1px solid #ddd; }
+  width: 100%; }
+  #header_sub .utilMenu {
+    width: 100%;
+    height: 40px;
+    padding-top: 5px;
+    background: #393834;
+    position: relative; }
+    #header_sub .utilMenu .inner {
+      width: 1180px; }
+      #header_sub .utilMenu .inner .util {
+        position: absolute;
+        right: 0;
+        top: 0; }
+        #header_sub .utilMenu .inner .util li {
+          float: left;
+          margin-left: 20px; }
+          #header_sub .utilMenu .inner .util li:nth-of-type(1) {
+            margin-left: 0px; }
+          #header_sub .utilMenu .inner .util li a {
+            font: 12px/1 'arial';
+            color: #fafafa; }
+      #header_sub .utilMenu .inner .sns {
+        position: absolute;
+        left: 0;
+        top: 3px; }
+        #header_sub .utilMenu .inner .sns li {
+          float: left;
+          margin-right: 20px; }
+          #header_sub .utilMenu .inner .sns li a {
+            font: 16px/1 'arial';
+            color: #fafafa; }
   #header_sub .inner {
     width: 1180px;
-    height: 120px;
+    height: 100px;
     margin: 0 auto;
     position: relative; }
     #header_sub .inner > h1 {
       position: absolute;
       left: 0;
-      bottom: 15px; }
+      top: 20px;
+      letter-spacing: 3px; }
       #header_sub .inner > h1 a {
-        font: bold 24px/1 'arial';
+        font: bold 30px/80px 'Raleway';
         color: #444; }
     #header_sub .inner #gnb {
       position: absolute;
       right: 0;
-      bottom: 0; }
-      #header_sub .inner #gnb li {
-        float: left; }
-        #header_sub .inner #gnb li a {
-          display: inline-block;
-          padding: 14px 40px;
-          font: bold 15px/1 'arial';
-          color: #777; }
-          #header_sub .inner #gnb li a:hover {
-            background-color: #555;
-            color: #fff; }
-    #header_sub .inner .util {
-      position: absolute;
       top: 20px;
-      right: 40px; }
-      #header_sub .inner .util li {
-        float: left;
-        margin-left: 20px; }
-        #header_sub .inner .util li a {
-          font: 12px/1 'arial';
-          color: #999; }
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #header_sub .inner #gnb li {
+        width: 100px;
+        text-align: center; }
+        #header_sub .inner #gnb li::after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 6px;
+          background: #c6aa92;
+          position: absolute;
+          bottom: 0;
+          opacity: 0; }
+        #header_sub .inner #gnb li:hover::after {
+          opacity: 1; }
+        #header_sub .inner #gnb li:hover a {
+          color: #c6aa92; }
+        #header_sub .inner #gnb li a {
+          display: block;
+          font: bold 14px/80px 'Raleway';
+          color: #777; }
     #header_sub .inner .btnCall {
       display: none;
       width: 20px;
@@ -81,7 +114,7 @@ fieldset {
         display: block;
         width: 100%;
         height: 2px;
-        background: #000;
+        background: #393834;
         position: absolute;
         top: 0;
         left: 0;
@@ -91,7 +124,7 @@ fieldset {
         display: block;
         width: 100%;
         height: 2px;
-        background: #000;
+        background: #393834;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -100,7 +133,7 @@ fieldset {
         display: block;
         width: 100%;
         height: 2px;
-        background: #000;
+        background: #393834;
         position: absolute;
         top: 50%;
         margin-top: -1px;
@@ -124,31 +157,120 @@ fieldset {
       left: -270px;
       width: 270px;
       height: 100vh;
-      background: #333;
+      background: #fafafa;
       transition: 0.5s;
-      padding: 35px 30px;
-      z-index: 10; }
+      z-index: 10;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); }
       #header_sub .inner .menuMo h1 {
-        border-bottom: 1px solid #666;
-        padding-bottom: 30px; }
+        padding: 25px 20px 26px 20px; }
         #header_sub .inner .menuMo h1 a {
           display: block;
-          font: bold 24px/1 'arial';
-          color: #fff;
-          text-align: center; }
+          font: bold 24px/1 'Raleway';
+          color: #393834; }
         #header_sub .inner .menuMo h1 span {
+          display: block;
           font-size: 12px;
           color: #aaa; }
-      #header_sub .inner .menuMo #gnbMo li a {
-        display: block;
-        width: 100%;
-        padding: 20px 0px;
-        border-bottom: 1px solid #444;
-        font: bold 14px/1 "arial";
-        color: #888;
-        text-align: center; }
+      #header_sub .inner .menuMo .moMenuList {
+        position: relative; }
+        #header_sub .inner .menuMo .moMenuList .login {
+          width: 100%;
+          background: rgba(0, 0, 0, 0.07);
+          display: flex;
+          align-items: center;
+          border-top: 1px solid #bbb;
+          padding: 25px 20px; }
+          #header_sub .inner .menuMo .moMenuList .login > a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: #c6aa92;
+            color: #fafafa;
+            text-align: center;
+            border-radius: 50%;
+            font: 25px/50px 'arial';
+            margin-right: 20px; }
+          #header_sub .inner .menuMo .moMenuList .login .utilMo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; }
+            #header_sub .inner .menuMo .moMenuList .login .utilMo li {
+              display: inline-block; }
+              #header_sub .inner .menuMo .moMenuList .login .utilMo li a {
+                display: block;
+                font: 16px/1 'Raleway';
+                color: #aaa; }
+              #header_sub .inner .menuMo .moMenuList .login .utilMo li:nth-of-type(1) {
+                position: relative;
+                width: 70px; }
+                #header_sub .inner .menuMo .moMenuList .login .utilMo li:nth-of-type(1)::after {
+                  content: '|';
+                  display: block;
+                  font: 16px/1 'Raleway';
+                  color: #aaa;
+                  position: absolute;
+                  top: 0;
+                  right: 12px; }
+        #header_sub .inner .menuMo .moMenuList #gnbMo li:last-child a {
+          border-bottom: 1px solid #bbb; }
+        #header_sub .inner .menuMo .moMenuList #gnbMo li a {
+          display: block;
+          width: 100%;
+          padding: 16px 0px;
+          border-top: 1px solid #bbb;
+          font: 14px/1 "Raleway";
+          color: #aaa;
+          text-align: center; }
+        #header_sub .inner .menuMo .moMenuList #gnbMo li:hover a {
+          color: #c6aa92;
+          background: rgba(0, 0, 0, 0.03); }
+        #header_sub .inner .menuMo .moMenuList .csMo {
+          display: flex;
+          align-items: center; }
+          #header_sub .inner .menuMo .moMenuList .csMo li:last-child a {
+            border-right: none; }
+          #header_sub .inner .menuMo .moMenuList .csMo li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 80px;
+            font: 14px/1 "Raleway";
+            color: #aaa;
+            text-align: center;
+            border-right: 1px solid #bbb;
+            border-bottom: 1px solid #bbb; }
+            #header_sub .inner .menuMo .moMenuList .csMo li a i {
+              font-size: 25px;
+              margin-bottom: 8px; }
+          #header_sub .inner .menuMo .moMenuList .csMo li:hover a {
+            color: #c6aa92;
+            background: rgba(0, 0, 0, 0.03); }
       #header_sub .inner .menuMo.on {
         left: 0px; }
+      #header_sub .inner .menuMo .follow {
+        width: 270px;
+        margin-top: 40px; }
+        #header_sub .inner .menuMo .follow h3 {
+          font: bold 14px/1 "Raleway";
+          color: #888;
+          text-align: center;
+          margin-bottom: 20px; }
+        #header_sub .inner .menuMo .follow .snsMo {
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-around; }
+          #header_sub .inner .menuMo .follow .snsMo li a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font: bold 20px/50px "Raleway";
+            color: #fafafa;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3); }
 
 /* content section ----------------------------------*/
 .content {
@@ -1315,7 +1437,7 @@ fieldset {
           font: 20px/1 'Raleway';
           color: #c6aa92;
           margin-bottom: 20px; }
-        #footer .inner .footMenu article ol li,
+        #footer .inner .footMenu article ul li,
         #footer .inner .footMenu article p {
           font: 14px/1.5 'Raleway';
           color: #fafafa;
