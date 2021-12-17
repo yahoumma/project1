@@ -101,6 +101,10 @@ fieldset {
           display: block;
           font: bold 14px/80px 'Raleway';
           color: #777; }
+        #header_sub .inner #gnb li.on::after {
+          opacity: 1; }
+        #header_sub .inner #gnb li.on a {
+          color: #c6aa92; }
     #header_sub .inner .btnCall {
       display: none;
       width: 20px;
@@ -275,66 +279,137 @@ fieldset {
 /* content section ----------------------------------*/
 .content {
   width: 100%;
-  padding: 0px 0px 150px; }
+  padding: 0px 0px 150px;
+  position: relative; }
   .content .sub_visual {
     width: 100%;
-    height: 250px;
+    height: 350px;
     background: #bbb;
-    margin-bottom: 100px; }
+    margin-bottom: 100px;
+    background: url(../img/sub_layout.jpg) no-repeat top/cover;
+    position: relative; }
+    .content .sub_visual::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 350px;
+      background: #c6aa92;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      left: 0; }
   .content .inner {
     width: 1180px;
     margin: 0 auto;
-    min-height: 500px; }
+    height: 350px;
+    position: relative;
+    z-index: 10; }
     .content .inner h1 {
-      font: normal 50px/1 'arial';
-      color: #000;
-      margin-bottom: 60px; }
-      .content .inner h1 span {
-        font: normal 20px/1 "맑은 고딕";
-        color: #aaa; }
-        .content .inner h1 span::before {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      font: normal 40px/1 'Raleway';
+      color: #fff;
+      letter-spacing: 2px; }
+    .content .inner ul {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      right: 0;
+      bottom: 10px; }
+      .content .inner ul li:nth-of-type(1) a::before {
+        display: none; }
+      .content .inner ul li a {
+        font: normal 14px/1 "arial";
+        color: #fff; }
+        .content .inner ul li a::before {
           content: '/';
-          margin-right: 20px;
-          margin-left: 10px; }
+          margin-right: 16px;
+          margin-left: 16px; }
 
 /* footer_sub ------------------------------------*/
 #footer_sub {
   width: 100%;
   padding: 100px 0;
-  background: #444; }
+  background: #393834;
+  position: relative; }
   #footer_sub .inner {
     width: 1180px;
     margin: 0 auto; }
-    #footer_sub .inner::after {
-      content: '';
-      display: block;
-      clear: both; }
-    #footer_sub .inner h1 {
-      font: bold 24px/1 'arial';
-      color: #666;
-      float: left; }
-    #footer_sub .inner ul {
-      float: right; }
-      #footer_sub .inner ul li {
-        float: left;
-        margin-left: 20px; }
-        #footer_sub .inner ul li a {
-          font: bold 14px/1 'arial';
-          color: #666; }
-    #footer_sub .inner address {
+    #footer_sub .inner .footMenu {
       width: 100%;
-      float: left;
-      font: 14px/1.3 'arial';
-      color: #777;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      border-top: 1px solid #888;
-      padding-top: 20px; }
-    #footer_sub .inner p {
-      font: 12px/1 'arial';
-      color: #777;
-      width: 100%;
-      float: left; }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 50px; }
+      #footer_sub .inner .footMenu article {
+        width: 30%;
+        height: 100px;
+        border-left: 1px solid #777777;
+        padding-left: 50px; }
+        #footer_sub .inner .footMenu article:nth-of-type(1) {
+          border-left: none; }
+        #footer_sub .inner .footMenu article h2 {
+          font: 20px/1 'Raleway';
+          color: #c6aa92;
+          margin-bottom: 20px; }
+        #footer_sub .inner .footMenu article ul li,
+        #footer_sub .inner .footMenu article p {
+          font: 14px/1.5 'Raleway';
+          color: #fafafa;
+          word-break: break-all; }
+  #footer_sub .subscribe {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative; }
+    #footer_sub .subscribe h2 {
+      font: 20px/1 'Raleway';
+      color: #fafafa;
+      margin-bottom: 20px; }
+    #footer_sub .subscribe form {
+      position: relative;
+      width: 450px;
+      margin: 0 auto; }
+      #footer_sub .subscribe form input[type=email] {
+        width: 450px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 20px;
+        border: none; }
+      #footer_sub .subscribe form button[type=submit] {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        right: 0;
+        border: 0;
+        background: #fafafa;
+        cursor: pointer; }
+  #footer_sub .copy {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #888; }
+    #footer_sub .copy .inner {
+      width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #footer_sub .copy .inner p {
+        font: 12px/1 'Raleway';
+        color: #fafafa;
+        width: 100%; }
+      #footer_sub .copy .inner ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #footer_sub .copy .inner ul li {
+          margin-right: 20px; }
+          #footer_sub .copy .inner ul li a {
+            font: 14px/1 'Raleway';
+            color: #fafafa; }
 
 /*tablet --------------------------------------------*/
 @media screen and (max-width: 1179px) {
@@ -383,85 +458,86 @@ fieldset {
     #footer_sub .inner ul li {
       margin-left: 0;
       margin: 5px; } }
-.community .sub_visual {
-  background: url(../img/brand3.jpg) no-repeat center/cover; }
-.community .inner table {
-  width: 100%;
-  border-bottom: 2px solid #111;
-  margin-bottom: 50px;
-  border-collapse: collapse; }
-  .community .inner table tr:nth-of-type(even) {
-    background: #eee; }
-  .community .inner table tr th {
-    padding: 15px;
-    background: #444;
-    color: #fff; }
-    .community .inner table tr th:nth-of-type(1) {
-      width: 10%; }
-    .community .inner table tr th:nth-of-type(3) {
-      width: 15%; }
-    .community .inner table tr th:nth-of-type(4) {
-      width: 15%; }
-  .community .inner table tr td {
-    padding: 13px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-    color: #555; }
-    .community .inner table tr td:nth-of-type(2) {
-      text-align: left; }
-      .community .inner table tr td:nth-of-type(2) a {
-        float: left;
-        color: #333;
-        font-family: 'arial';
-        line-height: 1.4; }
-    .community .inner table tr td:nth-of-type(3) {
-      font-family: "맑은 고딕"; }
-  .community .inner table tr:hover td {
-    background: lightcyan; }
-.community .inner .pagination {
-  width: 100%;
-  text-align: center; }
-  .community .inner .pagination::after {
-    content: '';
-    display: block;
-    clear: both; }
-  .community .inner .pagination .prev {
-    float: left;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: #555;
-    font-size: 20px;
-    color: #eee;
-    text-align: center;
-    line-height: 30px; }
-  .community .inner .pagination .next {
-    float: right;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: #555;
-    font-size: 20px;
-    color: #eee;
-    text-align: center;
-    line-height: 30px; }
-  .community .inner .pagination .numbers {
-    display: inline-block;
-    text-align: center;
-    font-size: 0; }
-    .community .inner .pagination .numbers a {
-      display: inline-block;
+.community {
+  height: 150vh; }
+  .community .inner table {
+    width: 100%;
+    border-bottom: 2px solid #111;
+    margin-bottom: 50px;
+    border-collapse: collapse; }
+    .community .inner table tr:nth-of-type(even) {
+      background: #eee; }
+    .community .inner table tr th {
+      padding: 15px;
+      background: #444;
+      color: #fff; }
+      .community .inner table tr th:nth-of-type(1) {
+        width: 10%; }
+      .community .inner table tr th:nth-of-type(3) {
+        width: 15%; }
+      .community .inner table tr th:nth-of-type(4) {
+        width: 15%; }
+    .community .inner table tr td {
+      padding: 13px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      color: #555; }
+      .community .inner table tr td:nth-of-type(2) {
+        text-align: left; }
+        .community .inner table tr td:nth-of-type(2) a {
+          float: left;
+          color: #333;
+          font-family: 'arial';
+          line-height: 1.4; }
+      .community .inner table tr td:nth-of-type(3) {
+        font-family: "맑은 고딕"; }
+    .community .inner table tr:hover td {
+      background: #c6aa92;
+      color: #fff; }
+  .community .inner .pagination {
+    width: 100%;
+    text-align: center; }
+    .community .inner .pagination::after {
+      content: '';
+      display: block;
+      clear: both; }
+    .community .inner .pagination .prev {
+      float: left;
+      display: block;
       width: 30px;
       height: 30px;
-      border: 1px solid #888;
-      font: 11px/30px 'arial';
-      color: #666;
+      background: #555;
+      font-size: 20px;
+      color: #eee;
       text-align: center;
-      margin: 0 5px;
-      transition: 0.5s; }
-      .community .inner .pagination .numbers a:hover {
-        background: #666;
-        color: #fff; }
+      line-height: 30px; }
+    .community .inner .pagination .next {
+      float: right;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: #555;
+      font-size: 20px;
+      color: #eee;
+      text-align: center;
+      line-height: 30px; }
+    .community .inner .pagination .numbers {
+      display: inline-block;
+      text-align: center;
+      font-size: 0; }
+      .community .inner .pagination .numbers a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #888;
+        font: 11px/30px 'arial';
+        color: #666;
+        text-align: center;
+        margin: 0 5px;
+        transition: 0.5s; }
+        .community .inner .pagination .numbers a:hover {
+          background: #666;
+          color: #fff; }
 
 /*tablet -----------------------------------------------------------*/
 @media screen and (max-width: 1179px) {
@@ -497,69 +573,6 @@ fieldset {
     display: none; }
   .community .inner .pagination .numbers {
     display: none; } }
-.department .sub_visual {
-  background: url(../img/brand2.jpg) no-repeat center/cover; }
-.department .inner .division {
-  width: 100%;
-  height: 600px;
-  background: url(../img/bgDivision.jpg) no-repeat center/contain; }
-  .department .inner .division .div_tree {
-    position: absolute;
-    top: -9999px;
-    opacity: 0;
-    transition: 0.5s; }
-    .department .inner .division .div_tree li span {
-      display: block;
-      width: 40%;
-      height: 50px;
-      background: #111;
-      margin-bottom: 20px;
-      font: bold 13px/50px 'arial';
-      color: #fff;
-      text-align: center;
-      border-radius: 25px;
-      position: relative; }
-      .department .inner .division .div_tree li span::after {
-        content: '';
-        display: block;
-        width: 1px;
-        height: calc(70px * 17 - 25px);
-        background: #aaa;
-        position: absolute;
-        top: 50px;
-        left: 50px; }
-    .department .inner .division .div_tree li ul li span {
-      transform: translateX(70px);
-      background: #666; }
-      .department .inner .division .div_tree li ul li span::before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 1px;
-        background: #aaa;
-        position: absolute;
-        top: 50%;
-        left: -20px; }
-    .department .inner .division .div_tree li ul li:nth-of-type(1) span::after {
-      display: none; }
-    .department .inner .division .div_tree li ul li:nth-of-type(2) span::after {
-      display: none; }
-    .department .inner .division .div_tree li ul li:nth-of-type(3) span::after {
-      height: calc(70px * 2 - 25px); }
-    .department .inner .division .div_tree li ul li:nth-of-type(4) span::after {
-      height: calc(70px * 3 - 25px); }
-    .department .inner .division .div_tree li ul li:nth-of-type(5) span::after {
-      height: calc(70px * 2 - 25px); }
-    .department .inner .division .div_tree li ul li:nth-of-type(6) span::after {
-      height: calc(70px * 3 - 25px); }
-    .department .inner .division .div_tree li ul li:nth-of-type(7) span::after {
-      height: calc(70px * 2 - 25px); }
-    .department .inner .division .div_tree li ul li ul li span {
-      transform: translateX(140px);
-      background: #999; }
-      .department .inner .division .div_tree li ul li ul li span::after {
-        display: none; }
-
 /*tablet --------------------------------------------*/
 @media screen and (max-width: 1179px) {
   .department .inner .division {
@@ -756,6 +769,10 @@ fieldset {
           display: block;
           font: bold 14px/80px 'Raleway';
           color: #777; }
+        #header .inner #gnb li.on::after {
+          opacity: 1; }
+        #header .inner #gnb li.on a {
+          color: #c6aa92; }
     #header .inner .btnCall {
       display: none;
       width: 20px;

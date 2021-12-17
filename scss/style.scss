@@ -116,6 +116,14 @@ $mobile : 539px;
                color:#777; 
 
             }
+            &.on{
+               &::after{
+                  opacity: 1;
+               }
+               a{
+                  color:#c6aa92;
+                  }
+             }
          }
       }
       .btnCall{
