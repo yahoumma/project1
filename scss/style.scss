@@ -654,6 +654,7 @@ $mobile : 539px;
          &:hover{
             animation-play-state: paused;
             cursor:pointer;
+            opacity: 0.7;
          }
       }
    }
