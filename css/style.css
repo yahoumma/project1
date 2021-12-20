@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -283,7 +284,7 @@ fieldset {
   position: relative; }
   .content .sub_visual {
     width: 100%;
-    height: 350px;
+    height: 200px;
     background: #bbb;
     margin-bottom: 100px;
     background: url(../img/sub_layout.jpg) no-repeat top/cover;
@@ -292,18 +293,46 @@ fieldset {
       content: '';
       display: block;
       width: 100%;
-      height: 350px;
+      height: 200px;
       background: #c6aa92;
       opacity: 0.3;
       position: absolute;
       top: 0;
       left: 0; }
+    .content .sub_visual .inner {
+      width: 1180px;
+      margin: 0 auto;
+      height: 200px;
+      position: relative;
+      z-index: 5; }
+      .content .sub_visual .inner h1 {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        font: normal 30px/1 'Raleway';
+        color: #fff;
+        letter-spacing: 2px; }
+      .content .sub_visual .inner ul {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 0;
+        bottom: 10px; }
+        .content .sub_visual .inner ul li:nth-of-type(1) a::before {
+          display: none; }
+        .content .sub_visual .inner ul li a {
+          font: normal 14px/1 "arial";
+          color: #fff; }
+          .content .sub_visual .inner ul li a::before {
+            content: '/';
+            margin-right: 16px;
+            margin-left: 16px; }
   .content .inner {
     width: 1180px;
     margin: 0 auto;
-    height: 350px;
-    position: relative;
-    z-index: 5; }
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
     .content .inner h1 {
       position: absolute;
       bottom: 40px;
@@ -326,6 +355,55 @@ fieldset {
           content: '/';
           margin-right: 16px;
           margin-left: 16px; }
+  .content article {
+    width: 370px; }
+    .content article .imgBox {
+      display: block;
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      object-fit: cover; }
+      .content article .imgBox img {
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        transition: 1s;
+        object-fit: cover; }
+    .content article h2 {
+      font: bold 22px/1 'Crete Round';
+      margin-top: 20px; }
+    .content article p {
+      margin: 20px 0;
+      font: 16px/1.6 'Raleway';
+      color: #ccc; }
+    .content article .btnMore {
+      font: bold 14px/1 'Raleway';
+      color: #c6aa92;
+      position: relative; }
+      .content article .btnMore::after {
+        content: '';
+        display: block;
+        background-color: #c6aa92;
+        width: 20px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 120%;
+        transition: 1s; }
+    .content article:hover img {
+      transform: scale(1.2);
+      transition: 1s;
+      filter: grayscale(2); }
+    .content article:hover .btnMore::after {
+      content: '';
+      display: block;
+      background-color: #c6aa92;
+      width: 310px;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      left: 120%;
+      transition: 1s; }
 
 /* footer_sub ------------------------------------*/
 #footer_sub {

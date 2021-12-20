@@ -1,7 +1,7 @@
 const swiper = new Swiper('.swiper', {
   direction: 'vertical',
   loop: true,
-  speed: 2000,
+  speed: 1500,
   spaceBetween:0,
 
   pagination: {
@@ -13,7 +13,7 @@ const swiper = new Swiper('.swiper', {
   },
 
   autoplay: {
-    delay: 2000,
+    delay: 1500,
     disableOnInteraction : true,
   },
 
